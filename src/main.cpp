@@ -12,7 +12,7 @@ std::vector<std::vector<int>*>* generateTestData(int length) {
     for(auto i = 0; i < length; i++) {
         int x1 = rand() % 2;
         int x2 = rand() % 2;
-        auto target = x1 == x2 ? 1 : 0;
+        auto target = x1 != x2 ? 1 : 0;
 
         testData->push_back(new std::vector<int>{x1, x2, target});
     }
