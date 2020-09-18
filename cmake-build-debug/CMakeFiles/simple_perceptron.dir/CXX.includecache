@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/nbaughman/Projects/cpp/CLionProjects/simple_perceptron/include/Input.h
+
+/Users/nbaughman/Projects/cpp/CLionProjects/simple_perceptron/include/Perceptron.h
+vector
+-
+Input.h
+/Users/nbaughman/Projects/cpp/CLionProjects/simple_perceptron/include/Input.h
+
+/Users/nbaughman/Projects/cpp/CLionProjects/simple_perceptron/src/main.cpp
+iostream
+-
+../include/Perceptron.h
+/Users/nbaughman/Projects/cpp/CLionProjects/simple_perceptron/include/Perceptron.h
+cstdlib
+-
+ctime
+-
+
