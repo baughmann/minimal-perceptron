@@ -1,7 +1,7 @@
 #include <iostream>
-#include "../include/Perceptron.h"
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 
 std::vector<std::vector<int>*>* generateTestData(int length) {
     // seed random
@@ -22,13 +22,13 @@ std::vector<std::vector<int>*>* generateTestData(int length) {
 
 int main() {
     // generate test data
-    auto inputs = generateTestData(1000);
+    auto inputs = generateTestData(10000);
     // instantiate weights
     std::vector<double> weights({0.0, 0.0, 0.0});
     // learning rate
     auto eta = 0.1;
     // a list of resulting calculations
-    std::vector<std::vector<int>> outputs(inputs->size());
+    std::vector<std::tuple<int, double>> outputs(inputs->size());
     // calculate the estimates
     for (auto input : *inputs) {
         // calculate the prediction
@@ -45,15 +45,14 @@ int main() {
         for (auto j = 0; j < weights.size(); j++) {
             auto deltaWeight = (eta*(input->back() - sum))*input->at(j);
             weights.at(j) += deltaWeight;
-//            std::cout << "result was off by " << input.back() - sum << " so i'm modifying the weight of input " << j << " by " << deltaWeight << std::endl;
         }
 
-
-        std::cout << "Guess was " << sum << " and expected was " << input->at(2) << std::endl;
-//        outputs.push_back({input.at(0), input.at(1), sum})
+        // add expected result and the guessed value to the list of outputs
+        outputs.push_back({input->at(2), sum});
     }
 
-//    for (auto output : outputs) {
-//        std::cout << output.at(0) << " " << output.at(1) << " = " << output.at(2)
-//    }
+    // iterate over the outputs and log them to the console
+    for (auto [expected, guess] : outputs) {
+        std::cout << "Guess was " << guess << " and expected was " << expected << std::endl;
+    }
 }
