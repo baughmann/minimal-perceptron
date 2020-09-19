@@ -17,4 +17,6 @@ The number of iteratorations is directly proportional to the `length` parameter 
 I have set the default to 10,000 iterations. This roughly equates to an accuracy of `0.0007 = 0` and `0.9989 = 1`.
 
 ### Reuse
-If you decide to copy some of this stuff for your own projects, just be aware that the `inputs` is a vector pointer to vector pointers. I decided to put that vector on the stack since it's size could be extremely large.
+If you decide to copy some of this stuff for your own projects, just be aware of the following:
+- The `inputs` is a vector pointer to vector pointers. I decided to put that vector on the stack since it's size could be extremely large.
+- The activaction function is currently `tanh` (i.e. hyperbolic tangent) which is not at all appropriate for an XOR gate. However, I desired to see the improvement in accuracy progressing with each iteration.
