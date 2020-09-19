@@ -55,4 +55,8 @@ int main() {
     for (auto [expected, guess] : outputs) {
         std::cout << "Guess was " << guess << " and expected was " << expected << std::endl;
     }
+
+    // clean up
+    inputs->clear();
+    delete inputs;
 }
