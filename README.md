@@ -13,7 +13,7 @@ The Perceptron learns to be an [XOR gate](https://en.wikipedia.org/wiki/XOR_gate
 | 1 | 0 | 1 |
 | 1 | 1 | 0 |
 
-The number of iteratorations is directly proportional to the `length` parameter that is passed to the `generateTestData()` function. 
+The number of iterations is directly proportional to the `length` parameter that is passed to the `generateTestData()` function. 
 I have set the default to 10,000 iterations. This roughly equates to an accuracy of `0.0007 = 0` and `0.9989 = 1`.
 
 ### Reuse
